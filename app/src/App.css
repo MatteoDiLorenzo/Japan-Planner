@@ -1,0 +1,380 @@
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Leaflet map custom styles */
+.leaflet-container {
+  background: #1a1a1a !important;
+}
+
+/* Leaflet: sotto i pannelli app (navbar ~500, sheet ~600) e sotto i dialog (10000+) */
+.leaflet-control-container .leaflet-control-zoom {
+  z-index: 300 !important;
+}
+
+.leaflet-control-container .leaflet-control-attribution {
+  z-index: 300 !important;
+}
+
+.leaflet-control-container .leaflet-control-scale {
+  z-index: 300 !important;
+}
+
+.leaflet-control-container {
+  z-index: 300 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  color: white !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+
+/* Custom marker styles */
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Focus styles */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #ef4444;
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(239, 68, 68, 0.3);
+  color: white;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* Animated map lines */
+@keyframes dash {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+@keyframes dashBus {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+
+.animated-line {
+  animation: dash 1s linear infinite;
+}
+
+.animated-bus-line {
+  animation: dashBus 0.8s linear infinite;
+}
+
+/* Bus marker animation */
+.bus-marker {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Line hover effect */
+.leaflet-overlay-pane path {
+  transition: stroke-width 0.2s ease;
+}
+
+.leaflet-overlay-pane path:hover {
+  stroke-width: 6px !important;
+}
+
+/* Enhanced popup styles */
+.leaflet-popup-content-wrapper {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Station marker glow effect */
+.custom-marker div {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-marker:hover div {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Dialog overlay and content z-index fix */
+[data-radix-dialog-overlay] {
+  z-index: 9999 !important;
+}
+
+[data-radix-dialog-content] {
+  z-index: 10000 !important;
+}
+
+/* Ensure map controls stay below dialogs */
+.leaflet-control-container {
+  z-index: 400 !important;
+}
+
+/* Button color fixes */
+.btn-primary {
+  @apply bg-blue-500 hover:bg-blue-600 text-white;
+}
+
+.btn-secondary {
+  @apply bg-gray-700 hover:bg-gray-600 text-white;
+}
+
+.btn-success {
+  @apply bg-emerald-500 hover:bg-emerald-600 text-white;
+}
+
+.btn-danger {
+  @apply bg-red-500 hover:bg-red-600 text-white;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  /* Hide scrollbar on mobile for cleaner look */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Larger touch targets for mobile */
+  .leaflet-control-zoom a {
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    font-size: 20px !important;
+  }
+  
+  /* Mobile popup improvements */
+  .leaflet-popup-content-wrapper {
+    max-width: 280px !important;
+  }
+  
+  .mobile-popup .leaflet-popup-content-wrapper {
+    max-width: 260px !important;
+  }
+  
+  /* Better touch handling for map */
+  .leaflet-container {
+    touch-action: pan-x pan-y;
+  }
+  
+  /* Prevent text selection on mobile UI elements */
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Smooth scrolling for mobile lists */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Mobile bottom sheet styles */
+  .mobile-bottom-sheet {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Improved touch targets */
+  button, 
+  [role="button"],
+  input,
+  select,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Smaller touch targets for icon-only buttons */
+  button[aria-label],
+  [role="button"][aria-label] {
+    min-height: 40px;
+    min-width: 40px;
+  }
+  
+  /* Card hover effects disabled on touch */
+  .hover-lift:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Mobile-safe line hover */
+  .leaflet-overlay-pane path:hover {
+    stroke-width: inherit !important;
+  }
+}
+
+/* Safe area insets for notched devices */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .glass {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid white;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animated-line,
+  .animated-bus-line {
+    animation: none !important;
+  }
+}
+
+/* Dark mode optimization */
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background: rgba(239, 68, 68, 0.4);
+  }
+}
