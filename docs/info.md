@@ -1,1 +1,0 @@
-<content of 'app/info.md'>
