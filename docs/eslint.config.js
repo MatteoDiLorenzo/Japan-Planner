@@ -1,0 +1,1 @@
+<content of 'app/eslint.config.js'>

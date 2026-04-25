@@ -1,0 +1,1 @@
+<content of 'app/vite.config.ts'>

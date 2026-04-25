@@ -1,0 +1,1 @@
+<content of 'app/src/hooks/use-mobile.ts'>
